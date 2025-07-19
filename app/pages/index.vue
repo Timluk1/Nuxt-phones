@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const filters = useProductsFiltersStore();
-const { data, pending } = await useFetch(() => `/api/phones?sortBy=${filters.sortBy}`);
-
+const { data, pending } = await useFetch(
+    () => `/api/phones?sortBy=${filters.sortBy}`,
+);
 </script>
 
 <template>

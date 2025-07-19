@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IPhone } from '~/types/phones.types';
+import type { IPhone } from "~/types/phones.types";
 
 interface IProductsListProps {
     items: IPhone[];

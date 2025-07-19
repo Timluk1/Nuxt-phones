@@ -56,7 +56,7 @@ export default defineEventHandler((event) => {
     // Фильтрация по бренду
     if (brand) {
         phones = phones.filter((phone) =>
-            phone.name.toLowerCase().includes(brand.toLowerCase())
+            phone.name.toLowerCase().includes(brand.toLowerCase()),
         );
     }
 

@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T extends { value: string, name: string }">
+<script setup lang="ts" generic="T extends { value: string; name: string }">
 interface ISelectProps {
     modelValue: string;
     items: T[];
@@ -17,9 +17,11 @@ const changeSelectedValue = (value: string) => {
 
 // вычисляем label для выбранного элемента по его уникальному значению
 const selectedItem = computed(() => {
-    return props.items.find(item => item.value === props.modelValue)?.name || "Select an option";
+    return (
+        props.items.find((item) => item.value === props.modelValue)?.name ||
+        "Select an option"
+    );
 });
-
 </script>
 
 <template>

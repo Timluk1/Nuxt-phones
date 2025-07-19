@@ -8,7 +8,7 @@ const navLinks = [
 const icons = [
     { name: "Favorites", src: "/icons/favorites.svg", path: "/favorites" },
     { name: "Cart", src: "/icons/cart.svg", path: "/cart" },
-    { name: "User", src: "/icons/user.svg", path: "/profile" },
+    { name: "User", src: "/icons/user.svg", path: "/login" },
 ];
 
 const router = useRoute();
@@ -26,27 +26,25 @@ const isActive = (path: string) => {
                     <img src="/icons/logo.svg" alt="Logo" />
                 </NuxtLink>
                 <nav class="nav-links">
-                    <NuxtLink
+                    <TextLink
                         v-for="link in navLinks"
                         :key="link.name"
                         :to="link.path"
-                        class="nav-link"
-                        :class="{ active: isActive(link.path) }"
+                        :isActive="isActive(link.path)"
                     >
                         {{ link.name }}
-                    </NuxtLink>
+                    </TextLink>
                 </nav>
 
                 <div class="icons">
-                    <NuxtLink
+                    <TextLink
                         v-for="icon in icons"
                         :key="icon.name"
                         :to="icon.path"
-                        class="nav-link"
-                        :class="{ active: isActive(icon.path) }"
+                        :isActive="isActive(icon.path)"
                     >
                         <img :src="icon.src" :alt="icon.name" />
-                    </NuxtLink>
+                    </TextLink>
                 </div>
             </header>
         </Container>
@@ -78,23 +76,6 @@ const isActive = (path: string) => {
 .icons {
     display: flex;
     gap: 31px;
-}
-
-.nav-link {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: var(--text-color-third);
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
-}
-
-.nav-link:hover {
-    opacity: 1;
-}
-
-.nav-link.active {
-    opacity: 1;
 }
 
 .separator {

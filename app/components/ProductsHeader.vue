@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useProductsFiltersStore } from '~/stores/productsFilters';
+import { useProductsFiltersStore } from "~/stores/productsFilters";
 
 interface IProductsHeaderProps {
     countProducts: number;
@@ -8,7 +8,6 @@ interface IProductsHeaderProps {
 const props = defineProps<IProductsHeaderProps>();
 
 const filters = useProductsFiltersStore();
-
 </script>
 
 <template>
